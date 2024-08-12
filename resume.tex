@@ -1,0 +1,187 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Kevin D. Kim} \\ \vspace{1pt}
+    \small 850-766-0153 $|$ \href{mailto:x@x.com}{\underline{kevin.d.kim1116@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/kevin-d-kim-684282160}} $|$
+    \href{https://github.com/...}{\underline{github.com/kdk1116}}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Foundry Services Portal Modernization - Full Stack Developer}{March 2022 -- Present}
+      {Intel Corporation -Intel Foundry Services}{Chandler, AZ}
+      \resumeItemListStart
+        \resumeItem{Addressed last minute authorization security gap for internal design application - using Microsoft DownstreamAPI and Azure to only allow specific applications with authorized clientIds + client secrets to call REST endpoints \textbf{Division Recognition Award Q2'24}}
+        \resumeItem{Completed stretch goal of porting over legacy Node.JS internal design app to .NET web app with React to integrate into IFS infrastructure}
+        \resumeItem{Developed reusable generic + fluent based API to replace 20+ APIs in microservice architecture for hotlinking feature -\textbf{Division Recognition Award Q1'24}}
+        \resumeItem{Developed a full-stack web application using .Net Core, React, GraphQL, PostgreSQL, Docker, and Apigee to reduce release times of internal and external vendor IPs - \textbf{Division Recognition Award Q3'23}}
+        \resumeItem{Designed and implemented multi-threaded redlock image processing encryption feature for embedding watermarks onto .png/.svg/.mp4 using ffmpeg - \textbf{Division Recognition Award Q4'23}}
+        \resumeItem{Lead team in emergency penetration test of IFS 2.0 Portal per external customer request addressing SQL injection, XSS, CSRF - \textbf{Division Recognition Award Q4'22}}
+        \resumeItem{Automated notification jobs using Quartz.Net based off specfic states, soft deletion for specific records, and file uploads}
+        \resumeItem{Created full stack user based preferences to allow upsert + delete by using MongoDB, Dapper, GraphQL, React, and Apollo}
+        \resumeItem{Defined back-end and front-end standards/documentation for team to use SOLID, Clean architecture, pure functional components, declarative + functional programming, and gang of four design patterns} 
+      \resumeItemListEnd
+      
+
+    \resumeSubheading
+      {Advanced Process Control - App Developer}{Sept. 2020 -- March 2022}
+      {Intel Corporation - Logic Technology Development}{Chandler, AZ}
+      \resumeItemListStart
+        \resumeItem{Reduced TD cost by 15\% implementing higher order grid terms to prevent waer of wafer tables in ASML scanner using WCF services house in custom .NET framework app }
+        \resumeItem{Ported over legacy process litho apps from VBScript to C\# and MATLAB to improve overall DX for development speed + debugging}
+        \resumeItem{Automated framework audit with Powershell, JMP, and Python into auditing dashboard}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Lithography Metrology - Process Engineer}{Jan. 2019 -- Sept. 2020}
+      {Intel Corporation - Litho Metro}{Chandler, AZ}
+      \resumeItemListStart
+        \resumeItem{Lead passdown by delegating responsibilities for entire team including engineers/technicians/shift group leads to improve velocity, yield, quality, and safety}
+        \resumeItem{Implemented mission critical software and firmware to automate preventative maintenance collaborating with Automation team}
+        \resumeItem{Improved accessibility/ergonomic features of internal dashboard adding screen reader features, semantic html, and aria properties}
+        \resumeItem{Analyzed tool health with parametric/defect data using SQL + JMP to identify problem tools}
+        
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+  
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Florida}{Gainesville, FL}
+      {Bachelor of Science in Chemical Engineering, Minor in Mathematics}{Aug. 2014 -- December 2018}
+  \resumeSubHeadingListEnd
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C#, C++, Python, SQL (Postgres, SSMS, MariaDB, Oracle), JavaScript/Typescript, HTML/CSS, MATLAB, Powershell, Bash, Zsh} \\
+     \textbf{Frameworks}{: .NET Core, .NET Famework, XUnit, React, Node.js, Django, Flask} \\
+     \textbf{Developer Tools}{: Git, Docker, Microsoft Azure, Google Cloud Platform, VS Code, VIM, Visual Studio, PyCharm, IntelliJ, Eclipse} \\
+     \textbf{Libraries}{: Magick.NET, SkiaSharp, AG grid, OAuth, Automapper, MediatR, Dapper, Entity Framework Core, HotChocolate, pandas, NumPy, Matplotlib}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
