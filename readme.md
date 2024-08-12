@@ -1,6 +1,6 @@
-# resume
+# Resumé
 
-LaTeX template for my personal resume
+LaTeX template for my personal resumé
 
 Based off of [jakegut/resume](https://github.com/jakegut/resume/)
 
