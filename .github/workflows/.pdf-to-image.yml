@@ -23,12 +23,12 @@ jobs:
     # Compile the LaTeX file to PDF
     - name: Compile LaTeX to PDF
       run: |
-        pdflatex myfile.tex
+        pdflatex resume.tex
 
     # Convert the PDF to an image
     - name: Convert PDF to Image
       run: |
-        convert -density 300 myfile.pdf[0] screenshot.png
+        convert -density 300 resume.pdf[0] resume.png
 
     # Upload the generated image back to the repository
     - name: Commit and push generated image
