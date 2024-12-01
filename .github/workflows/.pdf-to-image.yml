@@ -35,6 +35,6 @@ jobs:
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
-        git add screenshot.png
+        git add resume.png
         git commit -m "Add screenshot from latest LaTeX PDF"
         git push
