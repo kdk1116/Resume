@@ -1,0 +1,40 @@
+name: Convert PDF to Image
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the 'main' branch (or modify to your branch name)
+
+jobs:
+  pdf_to_image:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Install dependencies
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-latex-base texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra imagemagick
+
+    # Compile the LaTeX file to PDF
+    - name: Compile LaTeX to PDF
+      run: |
+        pdflatex myfile.tex
+
+    # Convert the PDF to an image
+    - name: Convert PDF to Image
+      run: |
+        convert -density 300 myfile.pdf[0] screenshot.png
+
+    # Upload the generated image back to the repository
+    - name: Commit and push generated image
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add screenshot.png
+        git commit -m "Add screenshot from latest LaTeX PDF"
+        git push
