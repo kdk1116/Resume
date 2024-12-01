@@ -14,27 +14,21 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Install dependencies
-    - name: Install dependencies
+    # Build the Docker image and run it
+    - name: Build and run docker
       run: |
-        sudo apt-get update
-        sudo apt-get install -y texlive-latex-base texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra imagemagick
+        docker build -t latex-pdf-to-image .
+        docker run --rm -v $(pwd):/app latex-pdf-to-image
 
-    # Compile the LaTeX file to PDF
-    - name: Compile LaTeX to PDF
-      run: |
-        pdflatex resume.tex
-
-    # Convert the PDF to an image
-    - name: Convert PDF to Image
-      run: |
-        convert -density 300 resume.pdf[0] resume.png
-
-    # Upload the generated image back to the repository
+    # Check if the image was generated and commit it back
     - name: Commit and push generated image
       run: |
-        git config user.name "github-actions"
-        git config user.email "actions@github.com"
-        git add resume.png
-        git commit -m "Add screenshot from latest LaTeX PDF"
-        git push
+        if [ -f screenshot.png ]; then
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add resume.png
+          git commit -m "Add screenshot from latest LaTeX PDF"
+          git push
+        else
+          echo "No screenshot generated, skipping commit."
+        fi
