@@ -28,7 +28,7 @@ jobs:
           git config user.email "actions@github.com"
           git add resume.png
           git commit -m "Add screenshot from latest LaTeX PDF"
-          git push
+          git push https://x-access-token:${{ secrets.ResumePAT }}@github.com/kdk1116/Resume.git
         else
           echo "No screenshot generated, skipping commit."
         fi
