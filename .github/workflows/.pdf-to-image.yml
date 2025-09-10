@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'resume.tex' # only trigger when there is a change to latex file
+      - 'resume.tex' 
 
 jobs:
   pdf_to_image:
@@ -19,8 +19,7 @@ jobs:
       run: |
         docker build -t latex-pdf-to-image .
         docker run --rm -v $(pwd):/app latex-pdf-to-image
-
-    # Check if the image was generated and commit it back
+  
     - name: Commit and push generated image
       run: |
         if [ -f resume.png ]; then
